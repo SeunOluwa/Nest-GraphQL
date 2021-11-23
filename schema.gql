@@ -11,6 +11,7 @@ type ItemType {
 
 type Query {
   items: [ItemType!]!
+  item(id: String!): ItemType!
   hello: String!
 }
 

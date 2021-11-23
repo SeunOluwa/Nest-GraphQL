@@ -13,6 +13,13 @@ export class ItemsResolver {
     return this.itemsService.findAll();
   }
 
+  @Query(returns  => ItemType)
+  async item(
+    @Args('id') id: string
+  ): Promise<ItemType> {
+    return this.itemsService.findOne(id);
+  }
+
   @Mutation(returns => ItemType)
   async createItem(@Args('input') input: ItemInput): Promise<ItemType> {
     return this.itemsService.create(input);
